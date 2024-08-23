@@ -20,7 +20,9 @@ body, html {
 }
 
 .navbar-brand div {
-    color: #ced4da;
+    color: #0077b6;
+    font-weight:bolder;
+    font-family: 'Times New Roman';
 }
 
 .nav-item a {
