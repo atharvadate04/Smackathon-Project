@@ -7,7 +7,7 @@ function Header() {
           <div className="flex items-center justify-between  h-16">
             <div className="flex items-center">
               <div className="text-white text-2xl -ml-32 font-bold">
-                <Logo name="Rail Assist " height='h-10' />
+                <Logo name="Rail-Assist " height='h-10' />
               </div>
             </div>
             <div className="hidden md:block">
