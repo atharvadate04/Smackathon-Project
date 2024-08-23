@@ -23,7 +23,6 @@ CREATE TABLE users (
     password VARCHAR(16),
     name VARCHAR(30),
     email VARCHAR(30),
-    dob DATE
 );
 
 CREATE TABLE ComplaintTypes (
@@ -39,8 +38,7 @@ CREATE TABLE Complaints (
     complaint_text TEXT,
     complaint_date DATE,
     status VARCHAR(20),
-    resolution_text TEXT,
-    resolution_date DATE,
+    pnr int,
     FOREIGN KEY (userid)
         REFERENCES users (userid),
     FOREIGN KEY (deptid)

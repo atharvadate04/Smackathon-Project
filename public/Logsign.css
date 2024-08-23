@@ -1,0 +1,157 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    background-image: url('Loginimg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Arial', sans-serif;
+}
+
+.navbar {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5); 
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.navbar-brand img {
+    width: 80px; 
+    height: auto;
+    margin-right: 20px;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    color: white;
+    align-items: center;
+}
+
+.main-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.form-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: 500px;
+    perspective: 1000px;
+}
+
+.form-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: transform 0.6s;
+    border-radius: 10px;
+    padding: 30px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(156, 163, 175, 0.4);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.login-container, .signup-container {
+    z-index: 2;
+    transform: rotateY(0deg);
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-container {
+    transform: rotateY(180deg);
+    height: 121%;
+}
+
+.form-wrapper.flip .login-container {
+    transform: rotateY(-180deg);
+}
+
+.form-wrapper.flip .signup-container {
+    transform: rotateY(0deg);
+}
+
+.login-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px; 
+    text-align: center;
+}
+
+.form-label {
+    font-weight: bold;
+    
+}
+
+.form-control {
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    margin-bottom: 20px; 
+    width: 500px; 
+    box-sizing: border-box;
+    height: 40px; 
+}
+
+.btn-primary {
+    background-color: #dc3545;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background-color: #c82333;
+}
+
+.sign-up {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+}
+
+.field {
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.Link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btnl {
+    margin-top: 20px;
+    margin-left: 5px;
+    text-align: center;
+    width: 30rem;
+}
+
+.sign2 {
+    margin-top: -10px;
+    height: 39rem;
+}
+
+.pass {
+    width: 500px;
+}

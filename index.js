@@ -22,7 +22,7 @@ const connection = mysql.createConnection({
   });
 
   app.get("/login", (req, res) => {
-    res.render("login.ejs");
+    res.render("Logsign.ejs");
   });
 
 app.listen("8080", () => {
