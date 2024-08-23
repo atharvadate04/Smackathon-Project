@@ -2,13 +2,13 @@ create database if not exists RailAssist;
 use RailAssist;
 
 CREATE TABLE Department (
-    deptid INT PRIMARY KEY ,
+    deptid varchar(100) PRIMARY KEY ,
     deptname VARCHAR(20)
 );
 
 CREATE TABLE employees (
-    eid INT PRIMARY KEY,
-    deptid INT,
+    eid varchar(100) PRIMARY KEY,
+    deptid varchar(100),
     username VARCHAR(20),
     password VARCHAR(16),
     ename VARCHAR(30),
@@ -18,23 +18,23 @@ CREATE TABLE employees (
 );
 
 CREATE TABLE users (
-    userid INT PRIMARY KEY,
+    userid varchar(100) PRIMARY KEY,
     username VARCHAR(20),
     password VARCHAR(16),
     name VARCHAR(30),
-    email VARCHAR(30),
+    email VARCHAR(30)
 );
 
 CREATE TABLE ComplaintTypes (
-    typeid INT PRIMARY KEY,
+    typeid varchar(100) PRIMARY KEY,
     typename VARCHAR(50)
 );
 
 CREATE TABLE Complaints (
-    complaintid INT PRIMARY KEY,
-    userid INT,
-    deptid INT,
-    typeid INT,
+    complaintid varchar(100) PRIMARY KEY,
+    userid varchar(100),
+    deptid varchar(100),
+    typeid varchar(100),
     complaint_text TEXT,
     complaint_date DATE,
     status VARCHAR(20),
@@ -48,9 +48,9 @@ CREATE TABLE Complaints (
 );
 
 CREATE TABLE EmployeeAssignments (
-    assignmentid INT PRIMARY KEY,
-    complaintid INT,
-    eid INT,
+    assignmentid varchar(100) PRIMARY KEY,
+    complaintid varchar(100),
+    eid varchar(100),
     assigned_date DATE,
     FOREIGN KEY (complaintid)
         REFERENCES Complaints (complaintid),

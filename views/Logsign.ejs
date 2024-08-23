@@ -25,12 +25,6 @@
                     <li class="nav-item">
                         <a class="nav-link btn btn-outline-primary me-2" href="#" id="signup-btn"><b>User Signup</b></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link btn btn-outline-success me-2" href="#"><b>Admin Login</b></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link btn btn-outline-success me-2" href="#"><b>Admin Signup</b></a>
-                    </li>
                 </ul>
             </div>
         </div>
@@ -40,41 +34,41 @@
         <div class="form-wrapper">
             <div class="form-container login-container">
                 <h2 class="login-text">Login to your account</h2>
-                <div class="mb-3 field">
-                    <label for="login-email" class="form-label">Email:</label>
-                    <input type="email" class="form-control" id="login-email" placeholder="Enter your email..">
-                </div>
-                <div class="mb-3 field">
-                    <label for="login-password" class="form-label">Password:</label>
-                    <input type="password" class="form-control pass" id="login-password" placeholder="Enter your password..">
-                </div>
-                <button type="submit" class="btn-primary">Login</button>
-                <p class="mt-3 Link">Don't have an account? <a href="#" id="Sign-up-btn" class="sign-up">Sign-up</a></p>
+                <form method="post" action="/login">
+                    <div class="mb-3 field">
+                        <label for="login-email" class="form-label">Email:</label>
+                        <input type="email" class="form-control" id="login-email" name="email" placeholder="Enter your email..">
+                    </div>
+                    <div class="mb-3 field">
+                        <label for="login-password" class="form-label">Password:</label>
+                        <input type="password" class="form-control pass" id="login-password" name="password" placeholder="Enter your password..">
+                    </div>
+                    <button type="submit" class="btn-primary">Login</button>
+                    <p class="mt-3 Link">Don't have an account? <a href="#" id="sign-up-btn" class="sign-up">Sign-up</a></p>
+                </form>
             </div>
-
-
-
-
             <div class="form-container signup-container">
                 <h2 class="login-text">Create your account</h2>
-                <div class=" field">
-                    <label for="signup-username" class="form-label">User name:</label>
-                    <input type="text" class="form-control" id="signup-username" placeholder="Enter your username..">
-                </div>
-                <div class=" field">
-                    <label for="signup-name" class="form-label">Name:</label>
-                    <input type="text" class="form-control" id="signup-name" placeholder="Enter your name..">
-                </div>
-                <div class=" field">
-                    <label for="signup-email" class="form-label">Email:</label>
-                    <input type="email" class="form-control" id="signup-email" placeholder="Enter your email..">
-                </div>
-                <div class="field">
-                    <label for="signup-password" class="form-label">Password:</label>
-                    <input type="password"  class="form-control pass" id="signup-password" placeholder="Enter your password..">
-                </div>
-                <button type="submit" class="btn-primary">Sign Up</button>
-                <p class=" Link">Already have an account? <a href="#" id="Log-in-btn" class="sign-up">Login</a></p>
+                <form method="post" action="/signup">
+                    <div class="field">
+                        <label for="signup-username" class="form-label">User name:</label>
+                        <input type="text" class="form-control" id="signup-username" name="username" placeholder="Enter your username..">
+                    </div>
+                    <div class="field">
+                        <label for="signup-name" class="form-label">Name:</label>
+                        <input type="text" class="form-control" id="signup-name" name="name" placeholder="Enter your name..">
+                    </div>
+                    <div class="field">
+                        <label for="signup-email" class="form-label">Email:</label>
+                        <input type="email" class="form-control" id="signup-email" name="email" placeholder="Enter your email..">
+                    </div>
+                    <div class="field">
+                        <label for="signup-password" class="form-label">Password:</label>
+                        <input type="password" class="form-control pass" id="signup-password" name="password" placeholder="Enter your password..">
+                    </div>
+                    <button type="submit" class="btn-primary">Sign Up</button>
+                    <p class="Link">Already have an account? <a href="#" id="log-in-btn" class="sign-up">Login</a></p>
+                </form>
             </div>
         </div>
     </div>
