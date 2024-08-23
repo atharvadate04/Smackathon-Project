@@ -1,19 +1,34 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import Header from './components/Header/Header'
 import Loader from './components/Loader/Loader'
-import Input from './components/Input'
 import Login from './Pages/Login'
 import Signup from './Pages/Signup'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+   
+    const timer = setTimeout(() => {
+      setLoading(false)
+    }, 12000)
+
+  
+    return () => clearTimeout(timer)
+  }, [])
 
   return (
-  <>
-    <Header/>
-    <Login/>
-  </>
+    <>
+      {loading ? (
+        <Loader/>
+      ) : (
+        <>
+          <Header/>
+          <Login/>
+        </>
+      )}
+    </>
   )
 }
 

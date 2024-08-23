@@ -7,7 +7,7 @@ function Input({type="",placeholder="",className="",height="",width="w-full",lab
         <div>
         {
             label &&<label
-            className={`inline-block font-bold  mb-1 ml-5  pl-1  `}
+            className={`inline-block text-[#edf2f4] font-bold  mb-1 ml-5  pl-1  `}
             htmlFor={id}>
                    {label} 
             </label>

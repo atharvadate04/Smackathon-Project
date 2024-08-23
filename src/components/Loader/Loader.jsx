@@ -5,7 +5,7 @@ const Loader = () => {
   return (
    <div className='main-cont'  >
      <div className="rail-madad-container">
-      <h1 className="rail-madad-title">Rail Madad</h1>
+      <h1 className="rail-madad-title">Rail Assist</h1>
       <p className="rail-madad-description">An online platform that listens to your complaints</p>
     </div>
    </div>

@@ -32,7 +32,7 @@ function Login() {
         <div className='max-w-full max-h-screen overflow-y-hidden'>
             <div className='w-full h-screen bg-[url(/Loginimg.jpg)] bg-cover bg-center bg-no-repeat overflow-hidden'>
                 <div className='ml-28 mt-[100px] z-50 shadow-md max-w-lg bg-gray-400/40 p-4 pb-8 flex-col justify-start border rounded-lg'>
-                    <h2 className='text-center font-semibold text-3xl mt-3 mb-2'>Login to your account</h2>
+                    <h2 className='text-center text-white  font-bold text-4xl mt-3 mb-2'>Login to your account</h2>
                     {error && <p className='text-red-500'>{error}</p>}
                     <form onSubmit={handleSubmit(login)}>
                         <div className='max-w-2xl mt-4 flex p-4 gap-6 flex-col'>
@@ -57,7 +57,7 @@ function Login() {
                             <Button  childern='Login'   className='ml-5 mt-4' />
                         </div>
                     </form>
-                    <p className='text-center text-base'>Don't have an account?&nbsp;
+                    <p className='text-center text-white text-base'>Don't have an account?&nbsp;
                         <button   className='text-sky-300 hover:underline'>Sign-up</button>
                     </p>
                 </div>

@@ -32,16 +32,17 @@ html, body {
     opacity: 0; 
     font-size: 4vw; 
     font-weight: bold;
-    color: white; 
+    color: #FDFCDC; 
     animation: slideIn 5s ease-in-out forwards, zoomOut 7s ease-in-out 5s forwards;
 }
 
 .rail-madad-description {
     position: relative;
     opacity: 0;
-    font-size: 1vw; 
-    color: white; 
-    animation: fadeIn 3s ease-in-out 6s forwards, zoomOut 7s ease-in-out 6s forwards;
+    font-size: 1vw;
+    margin-top: 10px; 
+    color: #FDFCDC; 
+    animation: fadeIn 3s ease-in-out 2s forwards, zoomOut 7s ease-in-out 6s forwards;
 }
 
 @keyframes slideIn {
@@ -70,7 +71,7 @@ html, body {
         opacity: 1;
     }
     to {
-        transform: scale(5); 
+        transform: scale(3); 
         opacity: 0; 
     }
 }
