@@ -1,11 +1,27 @@
 body, html {
     height: 100%;
     margin: 0;
-    background-image: url('BgImage.jpg');
+    
+    
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     font-family: 'Arial', sans-serif;
+}
+
+body::before {
+    content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('BgImage.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(3px);
+  z-index: -1;
 }
 
 .navbar {
@@ -22,11 +38,12 @@ body, html {
 .navbar-brand div {
     color: #0077b6;
     font-weight:bolder;
-    font-family: 'Times New Roman';
+    font-family: 'Samarkan', sans-serif;
+    font-size: 2rem;
 }
 
 .nav-item a {
-    color: #ced4da;
+    color: #fefae0;
     transition: 0.1s;
 }
 
@@ -63,7 +80,7 @@ body, html {
     border-radius: 10px;
     padding: 30px; 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-    background-color: rgba(156, 163, 175, 0.8);
+    background-color: rgba(156, 163, 175, 0.85);
     box-sizing: border-box;
     display: flex;
     flex-direction: column;

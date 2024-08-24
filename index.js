@@ -49,7 +49,10 @@ app.post("/login", (req, res) => {
     if (results.length > 0) {
       res.redirect("/home");
     } else {
-      res.status(401).send("Invalid Credentials")
+      res.status(401).send(`Invalid Credentials<br><br> 
+        <form action="/login"> 
+        <button style="background-color: #007bff; color: white ; padding: 5px 12px;">Go back to login</button>
+        </form>`)
     }
   });
 });
