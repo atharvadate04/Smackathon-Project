@@ -44,12 +44,12 @@ app.post("/login", (req, res) => {
   connection.query(q, [email, password], (err, results) => {
     if (err) {
       console.error(err);
-      return res.send("Error in Database");
+      return res.status(500).send("Error in Database");
     }
     if (results.length > 0) {
       res.redirect("/home");
     } else {
-      res.send("Invalid credentials");
+      res.status(401).send("Invalid Credentials")
     }
   });
 });
