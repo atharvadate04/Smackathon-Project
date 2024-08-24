@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rail Assist</title>
+    <link rel="stylesheet" href="/loader.css">
+    <link href="https://fonts.cdnfonts.com/css/samarkan" rel="stylesheet">
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/samarkan');
+    </style> 
+    <script defer src="/loader.js"></script> 
+</head>
+<body>
+    <div id="loader" class="main-cont">
+        <div class="rail-madad-container">
+            <h1 class="rail-madad-title">Rail Assist</h1>
+            <p class="rail-madad-description">An online platform that listens to your complaints</p>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(() => {
+                document.getElementById('loader').style.display = 'none'; 
+                window.location.href = '/login'; 
+            }, 11000); 
+        });
+    </script>
+</body>
+</html>

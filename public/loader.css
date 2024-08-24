@@ -1,0 +1,78 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; 
+}
+
+.main-cont {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rail-madad-container {
+    background-color: black;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    width: 100vw; 
+    height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+}
+
+.rail-madad-title {
+    position: relative;
+    opacity: 0; 
+    font-size: 4vw; 
+    font-weight: bold;
+    font-family: 'Samarkan', sans-serif;
+    color:#0077b6; 
+    animation: slideIn 5s ease-in-out forwards, zoomOut 7s ease-in-out 5s forwards;
+}
+
+.rail-madad-description {
+    position: relative;
+    opacity: 0;
+    font-size: 1vw; 
+    color: #fefae0; 
+    animation: fadeIn 3s ease-in-out 6s forwards, zoomOut 7s ease-in-out 6s forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%); 
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0); 
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes zoomOut {
+    from {
+        transform: scale(1); 
+        opacity: 1;
+    }
+    to {
+        transform: scale(5); 
+        opacity: 0; 
+    }
+}

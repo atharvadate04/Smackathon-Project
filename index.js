@@ -18,10 +18,17 @@ const connection = mysql.createConnection({
   password: "Hanuman@108"
 });
 
+// Route to render the loader page
+app.get("/", (req, res) => {
+  res.render("loader");
+});
+
+// Route to render the login page
 app.get("/login", (req, res) => {
   res.render("Logsign");
 });
 
+// Route to handle signup form
 app.post("/signup", (req, res) => {
   const { username, name, email, password } = req.body;
   const userid = uuidv4();
@@ -37,6 +44,7 @@ app.post("/signup", (req, res) => {
   });
 });
 
+// Route to handle login form
 app.post("/login", (req, res) => {
   const { email, password } = req.body;
   const q = `SELECT * FROM users WHERE email = ? AND password = ?`;
@@ -57,10 +65,30 @@ app.post("/login", (req, res) => {
   });
 });
 
+// Route to render the home page
 app.get("/home", (req, res) => {
   res.render("home");
 });
 
+// Route to handle complaint submissions
+// app.post('/complaints', (req, res) => {
+//   const { complaintText, complaintDate, pnrNumber } = req.body;
+//   const userid = 'some_user_id'; // Replace this with the actual user ID from session/authentication
+//   const status = 'Pending'; // Default status
+
+//   const q = `INSERT INTO Complaints (userid, complaint_text, complaint_date, status, pnr) VALUES (?, ?, ?, ?, ?)`;
+//   connection.query(q, [userid, complaintText, complaintDate, status, pnrNumber], (err, result) => {
+//     if (err) {
+//       console.error(err);
+//       return res.render('home', { message: 'Error in Database' });
+//     }
+
+//     console.log('Complaint registered');
+//     res.render('home', { message: 'Your complaint has been registered.' });
+//   });
+// });
+
+// Start the server
 app.listen(8080, () => {
   console.log("Listening on port 8080");
 });
