@@ -7,7 +7,9 @@ const { v4: uuidv4 } = require("uuid");
 
 app.use(methodOverride("_method"));
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json()); 
 app.set("view engine", "ejs");
+app.use(express.urlencoded({ extended: true }));
 app.set("views", path.join(__dirname, "/views"));
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -18,17 +20,17 @@ const connection = mysql.createConnection({
   password: "Hanuman@108"
 });
 
-// Route to render the loader page
+
 app.get("/", (req, res) => {
   res.render("loader");
 });
 
-// Route to render the login page
+
 app.get("/login", (req, res) => {
   res.render("Logsign");
 });
 
-// Route to handle signup form
+
 app.post("/signup", (req, res) => {
   const { username, name, email, password } = req.body;
   const userid = uuidv4();
@@ -44,7 +46,7 @@ app.post("/signup", (req, res) => {
   });
 });
 
-// Route to handle login form
+
 app.post("/login", (req, res) => {
   const { email, password } = req.body;
   const q = `SELECT * FROM users WHERE email = ? AND password = ?`;
@@ -60,35 +62,42 @@ app.post("/login", (req, res) => {
       res.status(401).send(`Invalid Credentials<br><br> 
         <form action="/login"> 
         <button style="background-color: #007bff; color: white ; padding: 5px 12px;">Go back to login</button>
-        </form>`)
+        </form>`);
     }
   });
 });
 
-// Route to render the home page
+
 app.get("/home", (req, res) => {
   res.render("home");
 });
 
-// Route to handle complaint submissions
-// app.post('/complaints', (req, res) => {
-//   const { complaintText, complaintDate, pnrNumber } = req.body;
-//   const userid = 'some_user_id'; // Replace this with the actual user ID from session/authentication
-//   const status = 'Pending'; // Default status
 
-//   const q = `INSERT INTO Complaints (userid, complaint_text, complaint_date, status, pnr) VALUES (?, ?, ?, ?, ?)`;
-//   connection.query(q, [userid, complaintText, complaintDate, status, pnrNumber], (err, result) => {
-//     if (err) {
-//       console.error(err);
-//       return res.render('home', { message: 'Error in Database' });
-//     }
+app.post('/complaints', (req, res) => {
+  console.log("Received data:", req.body);
+  const { complaintText, complaintDate, pnrNumber } = req.body;
+  const userid = 'some_user_id'; 
+  const status = 'Pending'; 
 
-//     console.log('Complaint registered');
-//     res.render('home', { message: 'Your complaint has been registered.' });
-//   });
-// });
+  const q = `INSERT INTO Complaints (userid, complaint_text, complaint_date, status, pnr) VALUES (?, ?, ?, ?, ?)`;
+  connection.query(q, [userid, complaintText, complaintDate, status, pnrNumber], (err, result) => {
+    if (err) {
+      console.error("Database error:", err);
+      return res.render('home', { message: 'Error in Database' });
+    }
 
-// Start the server
-app.listen(8080, () => {
-  console.log("Listening on port 8080");
+    console.log('Complaint registered');
+    res.render('home', { message: 'Your complaint has been registered.' });
+  });
+});
+
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
+});
+
+
+
+app.listen(3000, () => {
+  console.log("Listening on port 3000");
 });

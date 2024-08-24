@@ -114,22 +114,21 @@
     <div class="d-flex ">
       <div class="form-container">
         <h4>Complaint Form</h4>
-        <form>
-          <div class="">
+        <form action="/complaints" method="POST">
+          <div class="mb-3">
             <label for="complaintText" class="form-label"><b>Complaint Text</b></label>
-            <textarea class="form-control" id="complaintText" rows="3"></textarea>
+            <textarea class="form-control" id="complaintText" name="complaintText" rows="3"></textarea>
           </div>
-          <div class="">
+          <div class="mb-3">
             <label for="complaintDate" class="form-label"><b>Complaint Date</b></label>
-            <input type="date" class="form-control" id="complaintDate">
+            <input type="date" class="form-control" id="complaintDate" name="complaintDate">
           </div>
-          
-          <div class="">
+          <div class="mb-3">
             <label for="pnrNumber" class="form-label"><b>PNR Number</b></label>
-            <input type="text" class="form-control" id="pnrNumber">
+            <input type="text" class="form-control" id="pnrNumber" name="pnrNumber">
           </div>
           
-          <div class="">
+          <div class="mb-3">
             <label for="pnrNumber" class="form-label"><b>Image</b></label>
             <input type="file" class="form-control" id="imagefile">
           </div>
