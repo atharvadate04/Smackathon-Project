@@ -76,11 +76,12 @@ app.get("/home", (req, res) => {
 app.post('/complaints', (req, res) => {
   console.log("Received data:", req.body);
   const { complaintText, complaintDate, pnrNumber } = req.body;
-  const userid = 'some_user_id'; 
+  const complaint_id = uuidv4();
+  
   const status = 'Pending'; 
 
-  const q = `INSERT INTO Complaints (userid, complaint_text, complaint_date, status, pnr) VALUES (?, ?, ?, ?, ?)`;
-  connection.query(q, [userid, complaintText, complaintDate, status, pnrNumber], (err, result) => {
+  const q = `INSERT INTO Complaints (complaint_id, complaint_text, complaint_date, status, pnr) VALUES (?, ?, ?, ?, ?)`;
+  connection.query(q, [complaint_id, complaintText, complaintDate, status, pnrNumber], (err, result) => {
     if (err) {
       console.error("Database error:", err);
       return res.render('home', { message: 'Error in Database' });
